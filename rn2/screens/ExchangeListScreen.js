@@ -1,6 +1,5 @@
 
 import React from 'react';
-import CurrencyList from '../components/CurrencyList';
 import { StyleSheet, View, Text, FlatList, ActivityIndicator } from 'react-native';
 import CurrencyService from '../services/CurrencyService';
 

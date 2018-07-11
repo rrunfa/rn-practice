@@ -6,11 +6,12 @@ const CurrencyList = (props) => (
         data={[
             {key: 'USD'},
             {key: 'RUB'},
-            {key: 'EUR'}
+            {key: 'EUR'},
+            {key: 'Persons'},
         ]}
         renderItem={({item}) =>
             <TouchableOpacity onPress={() => {
-                props.onPressItem(item.key);   
+                props.onPressItem(item.key);
             }}>
                 <View>
                     <Text style={styles.item}>{item.key}</Text>

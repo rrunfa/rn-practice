@@ -1,9 +1,8 @@
-
 import React from 'react';
-import CurrencyList from '../components/CurrencyList';
 import { StyleSheet, View } from 'react-native';
+import PersonInfo from '../components/PersonInfo';
 
-class CurrencyListScreen extends React.Component {
+class PersonsListScreen extends React.Component {
 
     constructor() {
         super()
@@ -11,20 +10,15 @@ class CurrencyListScreen extends React.Component {
     }
 
     static navigationOptions = {
-      title: 'Select to exchange',
+        title: 'Person Info',
     };
+
     render() {
         const { navigation } = this.props;
+        let person = navigation.getParam('person', '');
         return (
             <View style={styles.container}>
-                <CurrencyList onPressItem={(currencyName) => {
-
-                    if (currencyName === 'Persons') {
-                        navigation.navigate('PersonsList', {  })
-                    } else {
-                        navigation.navigate('ExchangeList', { currencyName: currencyName })
-                    }
-                }}/>
+                <PersonInfo person={person}/>
             </View>
         );
     }
@@ -40,4 +34,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default CurrencyListScreen;
+export default PersonsListScreen;
